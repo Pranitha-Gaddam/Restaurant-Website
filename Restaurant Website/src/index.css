@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    background-color: rgb(75, 5, 5);
+}
+
+.cinzel-decorative-regular {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .cinzel-decorative-bold {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 550;
+    font-style: normal;
+  }
+  
+  .cinzel-decorative-black {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+  .crimson-text-regular {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .crimson-text-semibold {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .crimson-text-bold {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: large;
+    letter-spacing: 2px;
+  }
+  
+  .crimson-text-regular-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .crimson-text-semibold-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: large;
+  }
+  
+  .crimson-text-bold-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+
+.navbar {
+    box-shadow: 0 3px 3px rgba(253, 230, 138);
+}
+
+.text-stroke-3:hover {
+    text-shadow: -1px -1px 0 rgba(75,5,5), 1px -1px 0 rgb(75,5,5), -1px 1px 0 rgb(75,5,5), 1px 1px 0 rgb(253, 230, 138), 1px 1px 0 rgb(253, 230, 138);
+    transition: all 0.2s ease-in-out;
+}
+
+.title {
+    letter-spacing: 3px;
+    line-height: 1.5em;
+}
+
+.alt-title {
+    letter-spacing: 3px;
+    line-height: 1.5em;
+}
+
+.big-shadow-letters {
+    text-shadow: -2px -2px 0 rgba(75,5,5), 2px -2px 0 rgb(75,5,5), -2px 2px 0 rgb(75,5,5), 2px 2px 0 rgb(253, 230, 138), 2px 2px 0 rgb(253, 230, 138);
+}
+
+.small-shadow-letters {
+    text-shadow: -1px -1px 0 rgba(75,5,5), 1px -1px 0 rgb(75,5,5), -1px 1px 0 rgb(75,5,5), 1px 1px 0 rgb(253, 230, 138), 1px 1px 0 rgb(253, 230, 138);
+}
+
+@media (min-width: 768px) {
+    .big-heading {
+        font-size: 3.5em;
+    }
+}
+
+.arrow-button {
+    position: fixed;
+    bottom: 1px;
+}
+
+.arrow-button:hover svg {
+    background-color: rgb(253, 230, 138) !important;
+    color: black;
+}
+
+#about-us p {
+    margin-left: 12vw;
+    margin-right: 12vw;
+    letter-spacing: 0.5px;
+}
+
+#menu {
+    padding-top: 5vh;
+}
+
+#menubox {
+    padding-top: 4vh;
+    padding-bottom: 3vh;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom: 0;
+    line-height: 1.3em;
+}
+
+.animitem {
+    opacity: 0;
+}
+
+::placeholder {
+    color: rgb(253, 230, 138);
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    color: rgb(253, 230, 138);
+}
