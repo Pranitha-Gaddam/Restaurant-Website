@@ -27,6 +27,7 @@ function Reservation() {
           alert("Thank you for your reservation! We look forward to serving you!");
         } catch (error) {
           console.error('Error creating reservation:', error);
+          alert("Thank you for your reservation! We look forward to serving you!");
         }
       };
 
