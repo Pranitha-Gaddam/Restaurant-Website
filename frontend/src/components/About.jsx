@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 function AboutUs() {
@@ -6,12 +7,61 @@ function AboutUs() {
     const {ref: contentRef, inView: contentInView } = useInView( {triggerOnce: true});
 
   return (
-    <div
-      className="flex flex-col items-center justify-center h-screen w-screen min-h-min text-amber-200 snap-proximity" id="about-us">
-      <h1 className={`animitem cinzel-decorative-regular text-[5vw] lg:text-[3vw] big-heading font-bold ${titleInView ? 'animate-slidein100' : ''} animate snap-proximity big-shadow-letters m-[3vh] mb-15`} ref={titleRef}>About Us</h1>
-      <p className={`animitem text-[3vw] md:text-[2vw] text-center leading-[5lvh] md:leading-[7lvh] p-4 ${contentInView ? 'animate-slidein200' : ''} animate snap-proximity crimson-text-regular `} ref={contentRef}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+    <section
+      className="flex flex-col items-center justify-center min-h-screen w-screen text-amber-200 py-20" 
+      id="about-us"
+      aria-labelledby="about-heading"
+    >
+      <motion.h1 
+        ref={titleRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={titleInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="cinzel-decorative-regular text-[5vw] lg:text-[3vw] big-heading font-bold big-shadow-letters m-[3vh] mb-15"
+        id="about-heading"
+      >
+        Our Story
+      </motion.h1>
+      
+      <motion.div 
+        ref={contentRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={contentInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="max-w-4xl mx-auto px-6"
+      >
+        <div className="text-[3vw] md:text-[1.8vw] lg:text-[1.4vw] text-center leading-relaxed space-y-6 crimson-text-regular">
+          <p>
+            Welcome to <span className="crimson-text-semibold-italic text-amber-100">Indian Restaurant</span>, where authentic flavors meet modern dining excellence. 
+            Founded in 2018 by Chef Rajesh Kumar, our restaurant brings the rich culinary heritage of India to your table with 
+            passion, tradition, and innovation.
+          </p>
+          
+          <p>
+            Our kitchen is a symphony of aromatic spices, fresh ingredients, and time-honored cooking techniques passed down through 
+            generations. From the bustling streets of Mumbai to the royal kitchens of Rajasthan, we celebrate India's diverse 
+            regional cuisines with dishes that tell stories of culture, family, and love.
+          </p>
+          
+          <p>
+            Every meal at our restaurant is crafted with the finest ingredients, traditional spices imported directly from India, 
+            and the warmth of genuine hospitality. Whether you're savoring our signature butter chicken, indulging in our 
+            handcrafted biryanis, or exploring our extensive vegetarian offerings, each bite is a journey through India's 
+            magnificent culinary landscape.
+          </p>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={contentInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="pt-4"
+          >
+            <p className="crimson-text-semibold-italic text-amber-100 text-lg">
+              "Food is our common ground, a universal experience" - Join us in celebrating the art of Indian cuisine.
+            </p>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 }

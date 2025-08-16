@@ -6,6 +6,59 @@
     background-color: rgb(75, 5, 5);
 }
 
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+    outline: 2px solid rgb(253, 230, 138);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: rgb(253, 230, 138);
+    color: rgb(75, 5, 5);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Improved form input styles */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(75, 5, 5, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(253, 230, 138, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 230, 138, 0.5);
+}
+
 .cinzel-decorative-regular {
     font-family: "Cinzel Decorative", serif;
     font-weight: 500;
@@ -69,11 +122,6 @@
     box-shadow: 0 3px 3px rgba(253, 230, 138);
 }
 
-.text-stroke-3:hover {
-    text-shadow: -1px -1px 0 rgba(75,5,5), 1px -1px 0 rgb(75,5,5), -1px 1px 0 rgb(75,5,5), 1px 1px 0 rgb(253, 230, 138), 1px 1px 0 rgb(253, 230, 138);
-    transition: all 0.2s ease-in-out;
-}
-
 .title {
     letter-spacing: 3px;
     line-height: 1.5em;
@@ -109,8 +157,6 @@
 }
 
 #about-us p {
-    margin-left: 12vw;
-    margin-right: 12vw;
     letter-spacing: 0.5px;
 }
 
@@ -121,14 +167,12 @@
 #menubox {
     padding-top: 4vh;
     padding-bottom: 3vh;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-bottom: 0;
     line-height: 1.3em;
+    transition: all 0.3s ease;
 }
 
-.animitem {
-    opacity: 0;
+#menubox:hover {
+    transform: translateY(-2px);
 }
 
 ::placeholder {
@@ -138,4 +182,16 @@
 
 ::-ms-input-placeholder {
     color: rgb(253, 230, 138);
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
